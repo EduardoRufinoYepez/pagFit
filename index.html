@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANABOLIFTER</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-logo">
+        <h1>ANABOLIFTER</h1>
+      </div>
+    </header>
+
+    <!-- Sidebar de navegación -->
+    <nav class="navigation-sidebar">
+
+      <div class="nav-section upper-section">
+        <div class="nav-seccion-titulosup">
+          <h3 class="nav-section__title">Lo principal</h3>
+          <div class="nav-section__links">
+          <a href="#loprincipal" class="nav-link">Eres nuevo?</a>
+          </div>
+        </div>
+
+        <h3 class="nav-section__title">Tren Superior</h3>
+        <div class="nav-section__links">
+            <a href="#espalda" class="nav-link">Espalda</a>
+            <a href="#pectoral" class="nav-link">Pectoral</a>
+            
+            <!-- Menú desplegable para Deltoides -->
+              <div class="dropdown-wrapper">
+                <div class="dropdown">
+                  <button class="dropdown-btn">Deltoides</button>
+                    <div class="dropdown-content">
+                        <a href="#deltoide-anterior" class="dropdown-link">Anterior</a>
+                        <a href="#deltoide-medio" class="dropdown-link">Medio</a>
+                        <a href="#deltoide-posterior" class="dropdown-link">Posterior</a>
+                    </div>
+                </div>
+              </div>
+            
+            <a href="#bicep" class="nav-link">Bíceps</a>
+            <a href="#tricep" class="nav-link">Tríceps</a>
+            <a href="#abs" class="nav-link">Abs</a>
+        </div>
+      </div>
+
+      <div class="nav-section lower-section">
+        <h3 class="nav-section__title">Tren Inferior</h3>
+        <div class="nav-section__links">
+          <a href="#cuadriceps" class="nav-link">Cuádriceps</a>
+          <a href="#isquiotibiales" class="nav-link">Aductor</a>
+          <a href="#gluteos" class="nav-link">Glúteos</a>
+          <a href="#gastrocnemios" class="nav-link">Abductor</a>
+          <a href="#cuadriceps" class="nav-link">Isquiotibiales</a>
+          <a href="#gluteos" class="nav-link">Pantorrilla</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Contenido principal -->	
+    <main class="main-content">
+      <div class="contenedor-generico">
+        <h1>Que es ANABOLIFTER?</h1>
+        <p>
+          Un anabolifter es una personar que solo tiene dos objetivos a la hora
+          de ir al gym:
+            <ol class="lista-corta">
+             <li>ANABOLIZAR</li>
+             <li>LEVANTAR PESADO</li>
+            </ol>
+        </p>
+      </div>
+
+      <section class="featured-items">
+    <h2 class="section-title">Rutinas Destacadas</h2>
+    
+    <div class="items-grid">
+        <!-- Artículo 1-->
+        <article class="item-card">
+            <div class="item-image">
+                <img src="deltoides.jpg" alt="Ejercicios para deltoides" loading="lazy">
+            </div>
+            <div class="item-info">
+                <h3>Deltoides Completo</h3>
+                <p>Rutina de 15 minutos para trabajar todas las fibras del hombro.</p>
+                <a href="deltoides.html" class="item-button">Ver Rutina</a>
+            </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="item-card">
+            <div class="item-image">
+                <img src="gluteos.jpg" alt="Ejercicios para glúteos" loading="lazy">
+            </div>
+            <div class="item-info">
+                <h3>Glúteos de Acero</h3>
+                <p>Secuencia intensa para ganar fuerza y volumen.</p>
+                <a href="gluteos.html" class="item-button">Ver Vídeo</a>
+            </div>
+        </article>
+
+        <!-- Artículo 3 -->
+        <article class="item-card">
+            <div class="item-image">
+                <img src="abs.jpg" alt="Rutina de abdominales" loading="lazy">
+            </div>
+            <div class="item-info">
+                <h3>ABS en Casa</h3>
+                <p>Sin equipos, solo con tu peso corporal.</p>
+                <a href="abs.html" class="item-button">Comenzar</a>
+            </div>
+        </article>
+        
+        <!-- Artículo 4 -->
+        <article class="item-card">
+            <div class="item-image">
+                <img src="abs.jpg" alt="Rutina de abdominales" loading="lazy">
+            </div>
+            <div class="item-info">
+                <h3>ABS en Casa</h3>
+                <p>Sin equipos, solo con tu peso corporal.</p>
+                <a href="abs.html" class="item-button">Comenzar</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+      <div>
+        <progress value="70" max="100"></progress>
+<meter value="3" min="0" max="10"></meter>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
