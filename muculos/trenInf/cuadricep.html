@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- Cambié "en" por "es" -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../cssJsEtc/css/cuadricepStyles.css" />
     <title>Cuadricep</title>
+    <style>
+      /* Estilos temporales para depuración */
+      body {
+        background-color: #f0f0f0;
+      }
+      #sidebar-container {
+        border: 2px dashed red;
+        min-height: 100px;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <!-- SOLO UN CONTENEDOR -->
-    <div id="sidebar-container"></div>
+    <div id="sidebar-container">
+      <!-- Mensaje temporal de carga -->
+      <p>Cargando barra lateral...</p>
+    </div>
 
     <div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
     </div>
 
-    <!-- Script AL FINAL del body -->
     <script src="../../cssJsEtc/script/llamaBarraLateral.js"></script>
   </body>
 </html>
