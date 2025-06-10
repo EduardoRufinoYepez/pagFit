@@ -1,40 +1,52 @@
-// assets/js/components.js
+// assets/js/components.js (o llamaBarraLateral.js)
 
-// Función para cargar componentes
+// 1. Configuración de rutas BASE
+const COMPONENTS_PATH = '../componentesReutilizables/barraNavegLateral'; 
+
+// 2. Función principal mejorada
 async function loadComponents() {
     try {
-        // Cargar sidebar
-        const sidebarResponse = await fetch('../reutilizables/barraNavegLateral.html');
-        const sidebarHTML = await sidebarResponse.text();
-        document.getElementById('sidebar-container').innerHTML = sidebarHTML;
+        // Carga la barra lateral
+        await loadComponent('sidebar-container', `${COMPONENTS_PATH}barraNavegLatelar.html`);
         
-        // Cargar header si existe el contenedor
-        if (document.getElementById('header-container')) {
-            const headerResponse = await fetch('../components/header.html');
-            const headerHTML = await headerResponse.text();
-            document.getElementById('header-container').innerHTML = headerHTML;
-        }
+        // Carga condicional de header y footer (observa las rutas corregidas)
+        await loadComponent('header-container', `${COMPONENTS_PATH}header.html`);
+        await loadComponent('footer-container', `${COMPONENTS_PATH}footer.html`);
         
-        // Cargar footer si existe el contenedor
-        if (document.getElementById('footer-container')) {
-            const footerResponse = await fetch('../reutilizabl');
-            const footerHTML = await footerResponse.text();
-            document.getElementById('footer-container').innerHTML = footerHTML;
-        }
-        
-        // Inicializar funcionalidades de la sidebar
-        initSidebar();
+        initSidebar(); // Inicializa funcionalidades
         
     } catch (error) {
-        console.error('Error cargando componentes:', error);
-        document.getElementById('sidebar-container').innerHTML = 
-            '<p class="error">Error cargando navegación. <a href="sitemap.html">Ver mapa del sitio</a></p>';
+        console.error('Error:', error);
+        showError();
     }
 }
 
-// Inicializar funcionalidades de la sidebar (igual para todas las páginas)
+// 3. Función auxiliar para cargar cualquier componente
+async function loadComponent(containerId, path) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`Error al cargar ${path}`);
+    container.innerHTML = await response.text();
+}
+
+// 4. Manejo de errores visual
+function showError() {
+    const container = document.getElementById('sidebar-container');
+    if (container) {
+        container.innerHTML = `
+            <div class="error-message">
+                <p>⚠️ Error cargando componentes</p>
+                <a href="../index.html">Volver al inicio</a>
+            </div>
+        `;
+    }
+}
+
+// 5. Funcionalidad de la barra lateral (igual que antes)
 function initSidebar() {
-    // Mobile: Alternar dropdown con click
+    // Móvil: dropdowns
     document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
@@ -54,5 +66,6 @@ function initSidebar() {
     });
 }
 
-// Ejecutar al cargar la página
+// Iniciar todo cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', loadComponents);
 document.addEventListener('DOMContentLoaded', loadComponents);
